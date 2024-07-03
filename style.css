@@ -1,0 +1,613 @@
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+:root {
+  --box-shadow: 0.8rem 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --green: green;
+}
+html {
+  background: whitesmoke;
+  scroll-behavior: smooth;
+  font-size: 65.5%;
+  scroll-padding-top: 5.5rem;
+}
+
+header {
+  /* position: fixed; */
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  /* background: #fff; */
+  box-shadow: var(--box-shadow);
+  z-index: 1004;
+}
+
+header.sticky {
+  position: fixed;
+  background: #fff;
+}
+header .logo {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+header .logo span {
+  color: var(--green);
+}
+header .navbar a {
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--green);
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+header .navbar .active {
+  background: var(--green);
+  color: #fff;
+}
+header .icons i,
+header .icons a {
+  font-size: 1.7rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  background: var(--green);
+  color: #fff;
+}
+header .icons i:hover,
+header .icons a:hover {
+  transform: rotate(360deg);
+  background: rgba(179, 178, 178, 0.705);
+  color: var(--green);
+}
+header #menu-bars {
+  display: none;
+}
+/* GENERAL CSS STYLING STARTS  */
+section:nth-child(even) {
+  background: #eee;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+section {
+  transition: opacity 1s, transform 1s;
+}
+/* GENERAL CSS STYLING ENDS */
+.home {
+  padding: 3rem 9%;
+}
+.home .content {
+  padding-top: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.home .content .home-details {
+  flex: 1 1 45rem;
+}
+
+.home .content .home-details span {
+  font-size: 2.5rem;
+  color: green;
+  padding-bottom: 1rem;
+}
+.home .content .home-details h2 {
+  font-size: 5rem;
+  padding: 1.7rem 0;
+}
+
+.home .content .home-details p {
+  font-size: 2.2rem;
+  line-height: 1.7;
+  padding: 0.5;
+  width: 80%;
+}
+.btn {
+  margin-top: 1.5rem;
+  color: #fff;
+  font-size: 1.7rem;
+  display: inline-block;
+  background: green;
+  padding: 0.8rem 3rem;
+  border-radius: 0.5rem;
+  transition: all 0.5s linear;
+  position: relative;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  top: -3.5px;
+  right: 1rem;
+  height: 5px;
+  width: 1.7rem;
+  background: #fff;
+  border: 0.1rem solid green;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  bottom: -3.5px;
+  left: 1rem;
+  height: 5px;
+  width: 1.7rem;
+  background: #fff;
+  border: 0.1rem solid green;
+}
+.btn:hover a:after {
+  right: 1rem;
+}
+.btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.1rem;
+}
+
+.home .content .image {
+  flex: 1 1 45rem;
+}
+.home .content .image img {
+  width: 100%;
+}
+.dishes {
+  width: 100%;
+  margin: 7rem auto;
+  max-width: 1100px;
+}
+.dishes .sub-heading {
+  text-align: center;
+  color: green;
+  font-size: 2rem;
+}
+.dishes .heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.dishes .dishes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+}
+.dishes .dishes-container .dishes-content {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.dishes .dishes-container .dishes-content .image {
+  width: 80%;
+  height: 17rem;
+  margin: 1rem auto;
+}
+.dishes .dishes-container .dishes-content .image img {
+  width: 80%;
+  height: 17rem;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+.dishes .dishes-container .dishes-content .fa-heart,
+.dishes .dishes-container .dishes-content .fa-eye {
+  position: absolute;
+  top: 1.5rem;
+}
+.dishes .dishes-container .dishes-content .fa-heart {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: green;
+  border-radius: 50%;
+  text-align: center;
+  left: -15rem;
+  cursor: pointer;
+}
+
+.dishes .dishes-container .dishes-content .fa-eye {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: green;
+  border-radius: 50%;
+  text-align: center;
+  right: -15rem;
+  cursor: pointer;
+}
+.dishes .dishes-container .dishes-content:hover .fa-heart {
+  left: 1.5rem;
+}
+.dishes .dishes-container .dishes-content:hover .fa-eye {
+  right: 1.5rem;
+}
+.dishes .dishes-container .dishes-content .fa-eye:hover {
+  background: rgba(179, 178, 178, 0.705);
+  color: green;
+}
+.dishes .dishes-container .dishes-content .fa-heart:hover {
+  background: rgba(179, 178, 178, 0.705);
+  color: green;
+}
+.dishes .dishes-container .dishes-content h2 {
+  font-size: 4rem;
+}
+.dishes .dishes-container .dishes-content .stars {
+  padding: 1rem 0;
+}
+.dishes .dishes-container .dishes-content .stars i {
+  font-size: 1.7rem;
+  color: green;
+}
+.dishes .dishes-container .dishes-content span {
+  color: green;
+  font-size: 3rem;
+  margin: 1rem;
+  font-weight: 700;
+}
+.about-us {
+  padding: 3rem 5%;
+  margin: 7rem 0;
+}
+.about-us .sub-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: green;
+}
+.about-us .heading {
+  font-size: 3rem;
+  text-align: center;
+}
+.about-us .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.about-us .container .image {
+  flex: 1 1 45rem;
+  padding: 0 1rem;
+}
+.about-us .container .image img {
+  width: 80%;
+}
+.about-us .container .about-details {
+  flex: 1 1 45rem;
+  padding: 0 1rem;
+}
+.about-us .container .about-details .details-header {
+  font-size: 4rem;
+  color: green;
+}
+.about-us .container .about-details .details {
+  line-height: 2;
+  font-size: 1.5rem;
+}
+
+.about-us .container .icon-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.about-us .container .icon-container .icon-abt {
+  border: 0.1rem solid green;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  flex: 1 1 17rem;
+  justify-content: center;
+  align-items: center;
+}
+.about-us .container .icon-container .icon-abt i {
+  font-size: 2rem;
+  color: green;
+}
+.about-us .container .icon-container .icon-abt span {
+  font-size: 1.5rem;
+}
+.menu .sub-heading {
+  color: green;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.menu .heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.menu .menu-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-gap: 2rem;
+}
+.menu .menu-container .menu-content {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+}
+.menu .menu-container .menu-content .image {
+  width: 100%;
+  height: 25rem;
+  position: relative;
+}
+.menu .menu-container .menu-content .image img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.menu .menu-container .menu-content .image .fa-heart {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 50%;
+  background: green;
+  text-align: center;
+}
+.menu .menu-container .menu-content .image .fa-heart:hover {
+  background: #eee;
+  color: green;
+}
+.menu .menu-container .menu-content .menu-details {
+  padding: 2rem 1rem;
+}
+.menu .menu-container .menu-content .menu-details .stars {
+  padding-bottom: 1rem;
+}
+.menu .menu-container .menu-content .menu-details .stars i {
+  font-size: 1.7rem;
+  color: green;
+}
+.menu .menu-container .menu-content .menu-details span {
+  color: green;
+  font-weight: 700;
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+/*--END OF MENU STYLING*/
+.order {
+  margin: 9rem 0;
+  padding: 3rem;
+}
+.order .sub-heading {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+}
+
+.order .heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.order form {
+  width: 90rem;
+  margin: 3rem auto;
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.order form .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.order form .input-box .input {
+  overflow: hidden;
+  width: 49%;
+}
+
+.order form .input-box .input span {
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.5rem 0;
+}
+.order form .input-box .input input,
+.order form .input-box .input textarea {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  background: #eee;
+  color: green;
+  text-transform: none;
+  margin-bottom: 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.order form .input-box .input textarea {
+  height: 20rem;
+  resize: none;
+}
+.order .submit {
+  text-align: center;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.order .submit input {
+  border: none;
+}
+.operation .sub-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: green;
+}
+
+.operation .heading {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.operation .container {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem 7%;
+  flex-wrap: wrap;
+}
+.operation .container .wrapper {
+  flex: 1 1 25rem;
+}
+.operation .container .wrapper .image {
+  width: 50%;
+  height: 10rem;
+
+  margin: 1rem auto;
+}
+.operation .container .wrapper .image img {
+  width: 100%;
+  border-radius: 0.5rem;
+  height: inherit;
+}
+.operation .container .wrapper .sub-title {
+  color: green;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.operation .container .wrapper .title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.operation .container .wrapper .details {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+@media all and (max-width: 768px) {
+  .icons #menu-bars {
+    display: inline-block;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    background: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    background: #eee;
+  }
+
+  .menu .menu-container {
+    width: 100%;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    padding: 0 2rem;
+  }
+
+  .menu .menu-container .menu-content .image {
+    width: 100%;
+    height: 25rem;
+  }
+  .order form .input-box {
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .order form .input-box .input {
+    width: 100%;
+  }
+  .order form {
+    width: 100%;
+  }
+  /*DISHES SECTION*/
+  .dishes {
+    padding: 0 2rem;
+    width: 100%;
+  }
+  .dishes .dishes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3rem;
+  }
+  .dishes .dishes-container .dishes-content {
+    width: 100%;
+  }
+  .dishes .dishes-container .dishes-content .image {
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+  }
+  .dishes .dishes-container .dishes-content .image img {
+    width: 60%;
+  }
+
+  /*OPERATION SECTION*/
+  .operation {
+    padding: 0 2rem;
+  }
+
+  .operation .container .wrapper .details {
+    font-size: 1.7rem;
+    line-height: 1.7;
+  }
+  /*ABOUT SECTION*/
+  .about-us .container .about-details .details {
+    font-size: 1.7rem;
+    line-height: 1.7;
+  }
+}
+
+@media all and (max-width: 910px) {
+  html {
+    font-size: 50%;
+  }
+}
